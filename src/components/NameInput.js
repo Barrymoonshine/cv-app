@@ -37,6 +37,16 @@ class NameInput extends Component {
   render() {
     const { firstName, secondName, isVisible } = this.state;
 
+    let nameContainer = (
+      <div className='name-container'>
+        <div className='names'>
+          <div>{firstName}</div>
+          <div>{secondName}</div>
+        </div>
+        <button onClick={this.handleClick}>Edit</button>
+      </div>
+    );
+
     let nameForm = null;
 
     if (isVisible) {
@@ -61,9 +71,10 @@ class NameInput extends Component {
           </form>
         </div>
       );
-    }
-    return (
-      <div>
+      nameContainer = null;
+    } else {
+      nameForm = null;
+      nameContainer = (
         <div className='name-container'>
           <div className='names'>
             <div>{firstName}</div>
@@ -71,6 +82,11 @@ class NameInput extends Component {
           </div>
           <button onClick={this.handleClick}>Edit</button>
         </div>
+      );
+    }
+    return (
+      <div>
+        <div>{nameContainer}</div>
         <div>{nameForm}</div>
       </div>
     );
