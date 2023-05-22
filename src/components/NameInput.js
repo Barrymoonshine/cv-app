@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import '../styles/NameInput.css';
 
 class NameInput extends Component {
   constructor(props) {
@@ -6,6 +7,7 @@ class NameInput extends Component {
     this.state = {
       firstName: 'Bob',
       secondName: 'Smith',
+      isVisible: false,
     };
   }
 
@@ -23,40 +25,53 @@ class NameInput extends Component {
       firstName: firstName.value,
       secondName: secondName.value,
     });
+    this.handleClick();
+  };
+
+  handleClick = () => {
+    this.setState((prevState) => ({
+      isVisible: !prevState.isVisible,
+    }));
   };
 
   render() {
-    const { firstName, secondName } = this.state;
+    const { firstName, secondName, isVisible } = this.state;
+
+    let nameForm = null;
+
+    if (isVisible) {
+      nameForm = (
+        <div className='edit-name-modal'>
+          <form onSubmit={this.handleSubmit}>
+            <label>First name:</label>
+            <input
+              type='text'
+              name='firstName'
+              value={firstName}
+              onChange={this.handleName}
+            />
+            <label>Second name:</label>
+            <input
+              type='text'
+              name='secondName'
+              value={secondName}
+              onChange={this.handleName}
+            />
+            <button type='submit'>Submit</button>
+          </form>
+        </div>
+      );
+    }
     return (
       <div>
-        <div>
-          <div>{firstName}</div>
-          <div>{secondName}</div>
-          <button>Edit</button>
-        </div>
-        <div>
-          <div className='edit-name-modal'>
-            <div className='name-modal-content'>
-              <form onSubmit={this.handleSubmit}>
-                <label>First name:</label>
-                <input
-                  type='text'
-                  name='firstName'
-                  value={firstName}
-                  onChange={this.handleName}
-                />
-                <label>Second name:</label>
-                <input
-                  type='text'
-                  name='secondName'
-                  value={secondName}
-                  onChange={this.handleName}
-                />
-                <button type='submit'>Submit</button>
-              </form>
-            </div>
+        <div className='name-container'>
+          <div className='names'>
+            <div>{firstName}</div>
+            <div>{secondName}</div>
           </div>
+          <button onClick={this.handleClick}>Edit</button>
         </div>
+        <div>{nameForm}</div>
       </div>
     );
   }

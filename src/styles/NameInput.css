@@ -1,0 +1,13 @@
+.name-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.names {
+  display: flex;
+  gap: 20px;
+  font-size: 30px;
+  font-weight: bold;
+}
