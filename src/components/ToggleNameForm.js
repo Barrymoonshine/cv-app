@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../styles/NameInput.css';
+import '../styles/ToggleNameForm.css';
 
 class ToggleNameForm extends Component {
   constructor(props) {

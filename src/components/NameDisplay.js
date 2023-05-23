@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
-import '../styles/NameInput.css';
 import ToggleNameForm from './ToggleNameForm';
+import '../styles/NameDisplay.css';
 
 class NameDisplay extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      firstName: 'Bob',
-      secondName: 'Smith',
+      firstName: 'Joe',
+      secondName: 'Biden',
       isFormVisible: false,
     };
   }
