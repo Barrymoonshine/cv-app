@@ -1,6 +1,6 @@
 import './App.css';
 import React, { Component } from 'react';
-import NameInput from './components/NameInput';
+import NameDisplay from './components/NameDisplay';
 
 class App extends Component {
   render() {
@@ -8,7 +8,7 @@ class App extends Component {
       <div>
         <div className='title'>CV generator</div>
         <div className='cv-container'>
-          <NameInput />
+          <NameDisplay />
         </div>
       </div>
     );
