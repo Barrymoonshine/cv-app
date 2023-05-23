@@ -33,7 +33,7 @@ class ToggleNameForm extends Component {
 
     if (isFormVisible) {
       nameForm = (
-        <div className='edit-name-modal'>
+        <div>
           <form onSubmit={this.handleSubmit}>
             <label>First name:</label>
             <input
