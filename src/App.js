@@ -5,6 +5,7 @@ import AddressDisplay from './components/AddressDisplay';
 import ContactDisplay from './components/ContactDisplay';
 import PersonalStatementDisplay from './components/PersonalStatementDisplay';
 import WorkExperienceDisplay from './components/WorkExperienceDisplay';
+import EducationDisplay from './components/EducationDisplay';
 
 class App extends Component {
   render() {
@@ -19,6 +20,8 @@ class App extends Component {
           <PersonalStatementDisplay />
           <div>Work experience</div>
           <WorkExperienceDisplay />
+          <div>Education</div>
+          <EducationDisplay />
         </div>
       </div>
     );
