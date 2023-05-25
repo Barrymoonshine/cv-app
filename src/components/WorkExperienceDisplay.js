@@ -56,38 +56,49 @@ class WorkExperienceDisplay extends Component {
     });
   };
 
-  updateFormVisibility = () => {
-    this.setState((prevState) => ({
-      experience: !prevState.isFormVisible,
-    }));
+  updateFormVisibility = (id, boolean) => {
+    this.setState((prevState) => {
+      const updatedArray = prevState.experiences.map((experience) => {
+        if (experience.id === id) {
+          return { ...experience, isFormVisible: boolean };
+        }
+        return experience;
+      });
+
+      return { experiences: updatedArray };
+    });
   };
 
   render() {
-    const { experiences, isFormVisible, id } = this.state;
+    const { experiences, id } = this.state;
 
     return (
       <div className='experience-container'>
         {experiences.map((experience) => (
           <div className='experience-details'>
-            <div className='experience-details'>
-              <div key={id}>{experience.role}</div>
-              <div key={id}>{experience.organisation}</div>
-              <div key={id}>{experience.dateFrom}</div>
-              <div key={id}>{experience.dateTo}</div>
-              <div key={id}>{experience.responsibilities}</div>
-              <button
-                id={experience.id}
-                key={id}
-                onClick={this.updateFormVisibility}
-              >
-                Edit
-              </button>
-            </div>
-            <ToggleWEForm
-              isFormVisible={isFormVisible}
-              updateFormVisibility={this.updateFormVisibility}
-              updateExperinces={this.updateExperinces}
-            />
+            {experience.isFormVisible && (
+              <div>
+                <div key={id}>{experience.role}</div>
+                <div key={id}>{experience.organisation}</div>
+                <div key={id}>{experience.dateFrom}</div>
+                <div key={id}>{experience.dateTo}</div>
+                <div key={id}>{experience.responsibilities}</div>
+                <button
+                  id={experience.id}
+                  key={id}
+                  onClick={this.updateFormVisibility}
+                >
+                  Edit
+                </button>
+              </div>
+            )}
+            {!experience.isFormVisible && (
+              <ToggleWEForm
+                isFormVisible={experience.isFormVisible}
+                updateFormVisibility={this.updateFormVisibility}
+                updateExperinces={this.updateExperinces}
+              />
+            )}
           </div>
         ))}
         <button onClick={this.addExperience}>+ Work experience</button>

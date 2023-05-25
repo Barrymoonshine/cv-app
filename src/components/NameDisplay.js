@@ -28,24 +28,19 @@ class NameDisplay extends Component {
   render() {
     const { firstName, secondName, isFormVisible } = this.state;
 
-    let nameContainer = null;
-
-    if (isFormVisible) {
-      nameContainer = null;
-    } else {
-      nameContainer = (
-        <div className='name-container'>
-          <div className='names'>
-            <div>{firstName}</div>
-            <div>{secondName}</div>
-          </div>
-          <button onClick={this.updateFormVisibility}>Edit</button>
-        </div>
-      );
-    }
     return (
       <div>
-        <div>{nameContainer}</div>
+        <div>
+          {!isFormVisible && (
+            <div className='name-container'>
+              <div className='names'>
+                <div>{firstName}</div>
+                <div>{secondName}</div>
+              </div>
+              <button onClick={this.updateFormVisibility}>Edit</button>
+            </div>
+          )}
+        </div>
         <div>
           <ToggleNameForm
             isFormVisible={isFormVisible}
