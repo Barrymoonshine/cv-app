@@ -29,16 +29,17 @@ class ToggleWEForm extends Component {
       dateToInput,
       responsibilitiesInput,
     } = event.target;
-    const { updateExperinces, updateFormVisibility, id } = this.props;
+    const { updateExperinces, updateFormVisibilityCallBack, experienceId } =
+      this.props;
     updateExperinces(
-      id,
+      experienceId,
       roleInput.value,
       organisationInput.value,
       dateFromInput.value,
       dateToInput.value,
       responsibilitiesInput.value
-    );
-    updateFormVisibility(id, false);
+    )();
+    updateFormVisibilityCallBack(experienceId, false)();
   };
 
   render() {

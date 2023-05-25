@@ -33,6 +33,7 @@ class WorkExperienceDisplay extends Component {
       responsibilitiesInput
     ) =>
     () => {
+      console.log('updateExperinces');
       this.setState((prevState) => {
         const updatedArray = prevState.experiences.map((experience) => {
           if (experience.id === id) {
@@ -66,7 +67,8 @@ class WorkExperienceDisplay extends Component {
     });
   };
 
-  updateFormVisibility = (id, boolean) => () => {
+  updateFormVisibilityCallBack = (id, boolean) => () => {
+    console.log('updateFormVisibilityCallBack');
     this.setState((prevState) => {
       const updatedArray = prevState.experiences.map((experience) => {
         if (experience.id === id) {
@@ -74,7 +76,19 @@ class WorkExperienceDisplay extends Component {
         }
         return experience;
       });
+      return { experiences: updatedArray };
+    });
+  };
 
+  updateFormVisibility = (id, boolean) => {
+    console.log('updateFormVisibility');
+    this.setState((prevState) => {
+      const updatedArray = prevState.experiences.map((experience) => {
+        if (experience.id === id) {
+          return { ...experience, isFormVisible: boolean };
+        }
+        return experience;
+      });
       return { experiences: updatedArray };
     });
   };
@@ -95,7 +109,7 @@ class WorkExperienceDisplay extends Component {
                 <div key={uniqid()}>{experience.responsibilities}</div>
                 <button
                   key={uniqid()}
-                  onClick={this.updateFormVisibility(experience.id, true)}
+                  onClick={() => this.updateFormVisibility(experience.id, true)}
                 >
                   Edit
                 </button>
@@ -103,8 +117,9 @@ class WorkExperienceDisplay extends Component {
             ) : (
               <ToggleWEForm
                 key={uniqid()}
+                experienceId={experience.id}
                 isFormVisible={experience.isFormVisible}
-                updateFormVisibility={this.updateFormVisibility}
+                updateFormVisibilityCallBack={this.updateFormVisibilityCallBack}
                 updateExperinces={this.updateExperinces}
               />
             )}
