@@ -68,7 +68,6 @@ class WorkExperienceDisplay extends Component {
   };
 
   updateFormVisibilityCallBack = (id, boolean) => () => {
-    console.log('updateFormVisibilityCallBack');
     this.setState((prevState) => {
       const updatedArray = prevState.experiences.map((experience) => {
         if (experience.id === id) {
