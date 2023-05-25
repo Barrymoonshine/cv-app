@@ -20,7 +20,6 @@ class WorkExperienceDisplay extends Component {
           isFormVisible: false,
         },
       ],
-      id: uniqid(),
     };
   }
 
@@ -81,21 +80,21 @@ class WorkExperienceDisplay extends Component {
   };
 
   render() {
-    const { experiences, id } = this.state;
+    const { experiences } = this.state;
 
     return (
       <div className='experience-container'>
         {experiences.map((experience) => (
-          <div className='experience-details'>
+          <div key={uniqid()} className='experience-details'>
             {!experience.isFormVisible ? (
-              <div>
-                <div key={id}>{experience.role}</div>
-                <div key={id}>{experience.organisation}</div>
-                <div key={id}>{experience.dateFrom}</div>
-                <div key={id}>{experience.dateTo}</div>
-                <div key={id}>{experience.responsibilities}</div>
+              <div key={uniqid()}>
+                <div key={uniqid()}>{experience.role}</div>
+                <div key={uniqid()}>{experience.organisation}</div>
+                <div key={uniqid()}>{experience.dateFrom}</div>
+                <div key={uniqid()}>{experience.dateTo}</div>
+                <div key={uniqid()}>{experience.responsibilities}</div>
                 <button
-                  key={id}
+                  key={uniqid()}
                   onClick={this.updateFormVisibility(experience.id, true)}
                 >
                   Edit
@@ -103,9 +102,8 @@ class WorkExperienceDisplay extends Component {
               </div>
             ) : (
               <ToggleWEForm
-                key={id}
+                key={uniqid()}
                 isFormVisible={experience.isFormVisible}
-                id={experience.id}
                 updateFormVisibility={this.updateFormVisibility}
                 updateExperinces={this.updateExperinces}
               />
