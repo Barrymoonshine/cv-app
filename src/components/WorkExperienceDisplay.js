@@ -24,23 +24,34 @@ class WorkExperienceDisplay extends Component {
     };
   }
 
-  updateExperinces = (
-    roleInput,
-    organisationInput,
-    dateFromInput,
-    dateToInput,
-    responsibilitiesInput
-  ) => {
-    this.setState({
-      experiences: {
-        role: roleInput,
-        organisation: organisationInput,
-        dateFrom: dateFromInput,
-        dateTo: dateToInput,
-        responsibilities: responsibilitiesInput,
-      },
-    });
-  };
+  updateExperinces =
+    (
+      id,
+      roleInput,
+      organisationInput,
+      dateFromInput,
+      dateToInput,
+      responsibilitiesInput
+    ) =>
+    () => {
+      this.setState((prevState) => {
+        const updatedArray = prevState.experiences.map((experience) => {
+          if (experience.id === id) {
+            return {
+              ...experience,
+              role: roleInput,
+              organisation: organisationInput,
+              dateFrom: dateFromInput,
+              dateTo: dateToInput,
+              responsibilities: responsibilitiesInput,
+            };
+          }
+          return experience;
+        });
+
+        return { experiences: updatedArray };
+      });
+    };
 
   addExperience = () => {
     const newExperience = {
@@ -56,7 +67,7 @@ class WorkExperienceDisplay extends Component {
     });
   };
 
-  updateFormVisibility = (id, boolean) => {
+  updateFormVisibility = (id, boolean) => () => {
     this.setState((prevState) => {
       const updatedArray = prevState.experiences.map((experience) => {
         if (experience.id === id) {
@@ -76,7 +87,7 @@ class WorkExperienceDisplay extends Component {
       <div className='experience-container'>
         {experiences.map((experience) => (
           <div className='experience-details'>
-            {experience.isFormVisible && (
+            {!experience.isFormVisible ? (
               <div>
                 <div key={id}>{experience.role}</div>
                 <div key={id}>{experience.organisation}</div>
@@ -84,17 +95,17 @@ class WorkExperienceDisplay extends Component {
                 <div key={id}>{experience.dateTo}</div>
                 <div key={id}>{experience.responsibilities}</div>
                 <button
-                  id={experience.id}
                   key={id}
-                  onClick={this.updateFormVisibility}
+                  onClick={this.updateFormVisibility(experience.id, true)}
                 >
                   Edit
                 </button>
               </div>
-            )}
-            {!experience.isFormVisible && (
+            ) : (
               <ToggleWEForm
+                key={id}
                 isFormVisible={experience.isFormVisible}
+                id={experience.id}
                 updateFormVisibility={this.updateFormVisibility}
                 updateExperinces={this.updateExperinces}
               />

@@ -29,15 +29,16 @@ class ToggleWEForm extends Component {
       dateToInput,
       responsibilitiesInput,
     } = event.target;
-    const { updateExperinces, updateFormVisibility } = this.props;
+    const { updateExperinces, updateFormVisibility, id } = this.props;
     updateExperinces(
+      id,
       roleInput.value,
       organisationInput.value,
       dateFromInput.value,
       dateToInput.value,
       responsibilitiesInput.value
     );
-    updateFormVisibility();
+    updateFormVisibility(id, false);
   };
 
   render() {
@@ -54,7 +55,7 @@ class ToggleWEForm extends Component {
       <div>
         {isFormVisible && (
           <div>
-            <form onSubmit={this.handleSubmit}>
+            <form onSubmit={this.handleSubmit()}>
               <label>Role:</label>
               <input
                 type='text'
