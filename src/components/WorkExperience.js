@@ -33,7 +33,6 @@ class WorkExperience extends Component {
       responsibilitiesInput
     ) =>
     () => {
-      console.log('updateExperinces');
       this.setState((prevState) => {
         const updatedArray = prevState.experiences.map((experience) => {
           if (experience.id === id) {
@@ -80,11 +79,23 @@ class WorkExperience extends Component {
   };
 
   updateFormVisibility = (id, boolean) => {
-    console.log('updateFormVisibility');
     this.setState((prevState) => {
       const updatedArray = prevState.experiences.map((experience) => {
         if (experience.id === id) {
           return { ...experience, isFormVisible: boolean };
+        }
+        return experience;
+      });
+      return { experiences: updatedArray };
+    });
+  };
+
+  deleteExperience = (id) => {
+    this.setState((prevState) => {
+      const updatedArray = prevState.experiences.map((experience) => {
+        if (experience.id === id) {
+          console.log(experience);
+          return { experience: null };
         }
         return experience;
       });
@@ -111,6 +122,12 @@ class WorkExperience extends Component {
                   onClick={() => this.updateFormVisibility(experience.id, true)}
                 >
                   Edit
+                </button>
+                <button
+                  key={uniqid()}
+                  onClick={() => this.deleteExperience(experience.id)}
+                >
+                  Delete
                 </button>
               </div>
             ) : (
