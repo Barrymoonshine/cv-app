@@ -86,12 +86,9 @@ class Education extends Component {
 
   deleteEducation = (id) => {
     this.setState((prevState) => {
-      const updatedArray = prevState.educationalExperience.map((education) => {
-        if (education.id === id) {
-          return { education: null };
-        }
-        return education;
-      });
+      const updatedArray = prevState.educationalExperience.filter(
+        (education) => education.id !== id
+      );
       return { educationalExperience: updatedArray };
     });
   };

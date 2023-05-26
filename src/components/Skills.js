@@ -67,6 +67,13 @@ class Skills extends Component {
     });
   };
 
+  deleteSkill = (id) => {
+    this.setState((prevState) => {
+      const updatedArray = prevState.skills.filter((skill) => skill.id !== id);
+      return { skills: updatedArray };
+    });
+  };
+
   render() {
     const { skills } = this.state;
 
@@ -82,6 +89,12 @@ class Skills extends Component {
                   onClick={() => this.updateFormVisibility(skill.id, true)}
                 >
                   Edit
+                </button>
+                <button
+                  key={uniqid()}
+                  onClick={() => this.deleteSkill(skill.id)}
+                >
+                  Delete
                 </button>
               </div>
             ) : (
