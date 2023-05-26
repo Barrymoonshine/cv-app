@@ -11,22 +11,26 @@ import Skills from './components/Skills';
 class App extends Component {
   render() {
     return (
-      <div>
+      <main>
         <div className='title'>CV generator</div>
         <div className='cv-container'>
-          <Name />
-          <Address />
-          <Contact />
-          <div>About me</div>
-          <AboutMe />
-          <div>Work experience</div>
-          <WorkExperience />
-          <div>Education</div>
-          <Education />
-          <div>Skills</div>
-          <Skills />
+          <div className='left-container'>
+            <Name />
+            <Address />
+            <Contact />
+            <div>About me</div>
+            <AboutMe />
+          </div>
+          <div className='right-container'>
+            <div>Work experience</div>
+            <WorkExperience />
+            <div>Education</div>
+            <Education />
+            <div>Skills</div>
+            <Skills />
+          </div>
         </div>
-      </div>
+      </main>
     );
   }
 }
