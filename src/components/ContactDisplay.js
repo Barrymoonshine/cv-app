@@ -27,7 +27,6 @@ class ContactDisplay extends Component {
 
   render() {
     const { phoneNo, email, isFormVisible } = this.state;
-
     return (
       <div>
         <div>

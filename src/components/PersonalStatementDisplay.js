@@ -11,7 +11,7 @@ class PersonalStatementDisplay extends Component {
       As President of the United States, he strives to unite the nation, tackle pressing challenges, and build a brighter future. 
       With his experience, compassion, and resilience, Joe Biden is focused on delivering meaningful change, promoting equity, and restoring America's standing in the world. 
       He embodies leadership that prioritizes empathy, unity, and progress for a better tomorrow.`,
-      isPSFormVisible: false,
+      isFormVisible: false,
     };
   }
 
@@ -23,33 +23,27 @@ class PersonalStatementDisplay extends Component {
 
   updateFormVisibility = () => {
     this.setState((prevState) => ({
-      isPSFormVisible: !prevState.isPSFormVisible,
+      isFormVisible: !prevState.isFormVisible,
     }));
   };
 
   render() {
-    const { statement, isPSFormVisible } = this.state;
-
-    let statementContainer = null;
-
-    if (isPSFormVisible) {
-      statementContainer = null;
-    } else {
-      statementContainer = (
-        <div className='statement-container'>
-          <div className='statement-details'>
-            <div>{statement}</div>
-          </div>
-          <button onClick={this.updateFormVisibility}>Edit</button>
-        </div>
-      );
-    }
+    const { statement, isFormVisible } = this.state;
     return (
       <div>
-        <div>{statementContainer}</div>
+        <div>
+          {!isFormVisible && (
+            <div className='statement-container'>
+              <div className='statement-details'>
+                <div>{statement}</div>
+              </div>
+              <button onClick={this.updateFormVisibility}>Edit</button>
+            </div>
+          )}
+        </div>
         <div>
           <TogglePSForm
-            isPSFormVisible={isPSFormVisible}
+            isFormVisible={isFormVisible}
             updateFormVisibility={this.updateFormVisibility}
             updateStatement={this.updateStatement}
           />
