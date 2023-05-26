@@ -26,25 +26,23 @@ class ToggleContactForm extends Component {
   };
 
   render() {
-    const { isContactFormVisible } = this.props;
+    const { isFormVisible } = this.props;
     const { phoneNoInput, emailInput } = this.state;
 
-    let contactForm = null;
-
-    if (isContactFormVisible) {
-      contactForm = (
-        <div>
+    return (
+      <div>
+        {isFormVisible && (
           <form onSubmit={this.handleSubmit}>
-            <label for='email'>Email</label>
+            <label>Email</label>
             <input
               type='email'
               name='emailInput'
-              minlength='8'
+              minLength='4'
               required
               value={emailInput}
               onChange={this.handleContactsInput}
             />
-            <label for='phone_number'>Phone Number</label>
+            <label>Phone Number</label>
             <input
               type='tel'
               name='phoneNoInput'
@@ -54,12 +52,9 @@ class ToggleContactForm extends Component {
             />
             <button type='submit'>Submit</button>
           </form>
-        </div>
-      );
-    } else {
-      contactForm = null;
-    }
-    return <div>{contactForm}</div>;
+        )}
+      </div>
+    );
   }
 }
 
