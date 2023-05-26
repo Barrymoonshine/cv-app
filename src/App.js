@@ -1,4 +1,4 @@
-import './App.css';
+import './styles/App.css';
 import React, { Component } from 'react';
 import Name from './components/Name';
 import Address from './components/Address';
