@@ -46,21 +46,21 @@ class EducationDisplay extends Component {
   addEducation = () => {
     const newEducation = {
       id: uniqid(),
-      institute: 'President of the United States',
-      subject: 'The White House, Washington, D.C.',
-      grade: '2021',
-      level: 'Present',
+      institute: 'New',
+      subject: 'New',
+      grade: 'New',
+      level: 'New',
       isFormVisible: false,
     };
     this.setState({
-      education: [...this.state.education, newEducation],
+      educationalExperience: [
+        ...this.state.educationalExperience,
+        newEducation,
+      ],
     });
   };
 
   updateFormVisibilityCallBack = (id, boolean) => () => {
-    console.log('updateFormVisibilityCallBack invoked');
-    console.log(`id: ${id}`);
-    console.log(`id: ${boolean}`);
     this.setState((prevState) => {
       const updatedArray = prevState.educationalExperience.map((education) => {
         if (education.id === id) {
