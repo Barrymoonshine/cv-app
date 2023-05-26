@@ -41,7 +41,7 @@ class ToggleAddressForm extends Component {
   };
 
   render() {
-    const { isAddressFormVisible } = this.props;
+    const { isFormVisible } = this.props;
     const {
       firstLineInput,
       secondLineInput,
@@ -50,11 +50,9 @@ class ToggleAddressForm extends Component {
       countryInput,
     } = this.state;
 
-    let addressForm = null;
-
-    if (isAddressFormVisible) {
-      addressForm = (
-        <div>
+    return (
+      <div>
+        {isFormVisible && (
           <form onSubmit={this.handleSubmit}>
             <label>Address line 1:</label>
             <input
@@ -62,6 +60,8 @@ class ToggleAddressForm extends Component {
               name='firstLineInput'
               value={firstLineInput}
               onChange={this.handleAddressInput}
+              minLength='1'
+              required
             />
             <label>Address line 2:</label>
             <input
@@ -69,6 +69,7 @@ class ToggleAddressForm extends Component {
               name='secondLineInput'
               value={secondLineInput}
               onChange={this.handleAddressInput}
+              required
             />
             <label>City:</label>
             <input
@@ -76,6 +77,7 @@ class ToggleAddressForm extends Component {
               name='cityInput'
               value={cityInput}
               onChange={this.handleAddressInput}
+              required
             />
             <label>ZIP/ Post code</label>
             <input
@@ -83,6 +85,7 @@ class ToggleAddressForm extends Component {
               name='zipCodeInput'
               value={zipCodeInput}
               onChange={this.handleAddressInput}
+              required
             />
             <label>Country</label>
             <input
@@ -90,15 +93,13 @@ class ToggleAddressForm extends Component {
               name='countryInput'
               value={countryInput}
               onChange={this.handleAddressInput}
+              required
             />
             <button type='submit'>Submit</button>
           </form>
-        </div>
-      );
-    } else {
-      addressForm = null;
-    }
-    return <div>{addressForm}</div>;
+        )}
+      </div>
+    );
   }
 }
 

@@ -39,7 +39,6 @@ class ToggleNameForm extends Component {
               name='firstNameInput'
               value={firstNameInput}
               onChange={this.handleNameInput}
-              minLength='1'
               required
             />
             <label>Second name:</label>
@@ -48,7 +47,6 @@ class ToggleNameForm extends Component {
               name='secondNameInput'
               value={secondNameInput}
               onChange={this.handleNameInput}
-              minLength='1'
               required
             />
             <button type='submit'>Submit</button>
