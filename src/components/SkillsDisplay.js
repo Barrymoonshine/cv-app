@@ -3,7 +3,7 @@ import '../styles/SkillsDisplay.css';
 import ToggleSkillsForm from './ToggleSkillsForm';
 import uniqid from 'uniqid';
 
-class ToggleSkillsForm extends Component {
+class SkillsDisplay extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -74,7 +74,7 @@ class ToggleSkillsForm extends Component {
       <div className='skills-container'>
         {skills.map((skill) => (
           <div key={uniqid()} className='skill-details'>
-            {!education.isFormVisible ? (
+            {!skill.isFormVisible ? (
               <div key={uniqid()}>
                 <div key={uniqid()}>{skill.skill}</div>
                 <button
@@ -101,4 +101,4 @@ class ToggleSkillsForm extends Component {
   }
 }
 
-export default ToggleSkillsForm;
+export default SkillsDisplay;
