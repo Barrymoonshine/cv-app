@@ -25,32 +25,27 @@ class TogglePSForm extends Component {
   };
 
   render() {
-    const { isPSFormVisible } = this.props;
+    const { isFormVisible } = this.props;
     const { statementInput } = this.state;
 
-    let psForm = null;
-
-    if (isPSFormVisible) {
-      psForm = (
-        <div>
+    return (
+      <div>
+        {isFormVisible && (
           <form onSubmit={this.handleSubmit}>
-            <label for='personal_statement'>PersonalStatement</label>
+            <label>PersonalStatement</label>
             <textarea
               type='personalStatment'
               name='statementInput'
-              maxlength='600'
+              maxLength='600'
               required
               value={statementInput}
               onChange={this.handleStatementInput}
             />
             <button type='submit'>Submit</button>
           </form>
-        </div>
-      );
-    } else {
-      psForm = null;
-    }
-    return <div>{psForm}</div>;
+        )}
+      </div>
+    );
   }
 }
 
