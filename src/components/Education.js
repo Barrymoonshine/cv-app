@@ -84,6 +84,18 @@ class Education extends Component {
     });
   };
 
+  deleteEducation = (id) => {
+    this.setState((prevState) => {
+      const updatedArray = prevState.educationalExperience.map((education) => {
+        if (education.id === id) {
+          return { education: null };
+        }
+        return education;
+      });
+      return { educationalExperience: updatedArray };
+    });
+  };
+
   render() {
     const { educationalExperience } = this.state;
 
@@ -104,6 +116,12 @@ class Education extends Component {
                   onClick={() => this.updateFormVisibility(education.id, true)}
                 >
                   Edit
+                </button>
+                <button
+                  key={uniqid()}
+                  onClick={() => this.deleteEducation(education.id)}
+                >
+                  Delete
                 </button>
               </div>
             ) : (

@@ -92,13 +92,9 @@ class WorkExperience extends Component {
 
   deleteExperience = (id) => {
     this.setState((prevState) => {
-      const updatedArray = prevState.experiences.map((experience) => {
-        if (experience.id === id) {
-          console.log(experience);
-          return { experience: null };
-        }
-        return experience;
-      });
+      const updatedArray = prevState.experiences.filter(
+        (experience) => experience.id !== id
+      );
       return { experiences: updatedArray };
     });
   };
