@@ -29,11 +29,9 @@ class ToggleNameForm extends Component {
     const { isFormVisible } = this.props;
     const { firstNameInput, secondNameInput } = this.state;
 
-    let nameForm = null;
-
-    if (isFormVisible) {
-      nameForm = (
-        <div>
+    return (
+      <div>
+        {isFormVisible && (
           <form onSubmit={this.handleSubmit}>
             <label>First name:</label>
             <input
@@ -41,6 +39,8 @@ class ToggleNameForm extends Component {
               name='firstNameInput'
               value={firstNameInput}
               onChange={this.handleNameInput}
+              minLength='1'
+              required
             />
             <label>Second name:</label>
             <input
@@ -48,15 +48,14 @@ class ToggleNameForm extends Component {
               name='secondNameInput'
               value={secondNameInput}
               onChange={this.handleNameInput}
+              minLength='1'
+              required
             />
             <button type='submit'>Submit</button>
           </form>
-        </div>
-      );
-    } else {
-      nameForm = null;
-    }
-    return <div>{nameForm}</div>;
+        )}
+      </div>
+    );
   }
 }
 

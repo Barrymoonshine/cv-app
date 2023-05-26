@@ -11,7 +11,7 @@ class AddressDisplay extends Component {
       city: 'NW Washington',
       zipCode: ' DC 20500',
       country: 'USA',
-      isAddressFormVisible: false,
+      isFormVisible: false,
     };
   }
 
@@ -33,44 +33,33 @@ class AddressDisplay extends Component {
 
   updateFormVisibility = () => {
     this.setState((prevState) => ({
-      isAddressFormVisible: !prevState.isAddressFormVisible,
+      isFormVisible: !prevState.isFormVisible,
     }));
   };
 
   render() {
-    const {
-      firstLine,
-      secondLine,
-      city,
-      zipCode,
-      country,
-      isAddressFormVisible,
-    } = this.state;
+    const { firstLine, secondLine, city, zipCode, country, isFormVisible } =
+      this.state;
 
-    let addressContainer = null;
-
-    if (isAddressFormVisible) {
-      addressContainer = null;
-    } else {
-      addressContainer = (
-        <div className='address-container'>
-          <div className='address'>
-            <div>{firstLine}</div>
-            <div>{secondLine}</div>
-            <div>{city}</div>
-            <div>{zipCode}</div>
-            <div>{country}</div>
-          </div>
-          <button onClick={this.updateFormVisibility}>Edit</button>
-        </div>
-      );
-    }
     return (
       <div>
-        <div>{addressContainer}</div>
+        <div>
+          {!isFormVisible && (
+            <div className='address-container'>
+              <div className='address-details'>
+                <div>{firstLine}</div>
+                <div>{secondLine}</div>
+                <div>{city}</div>
+                <div>{zipCode}</div>
+                <div>{country}</div>
+              </div>
+              <button onClick={this.updateFormVisibility}>Edit</button>
+            </div>
+          )}
+        </div>
         <div>
           <ToggleAddressForm
-            isAddressFormVisible={isAddressFormVisible}
+            isFormVisible={isFormVisible}
             updateFormVisibility={this.updateFormVisibility}
             updateAddress={this.updateAddress}
           />

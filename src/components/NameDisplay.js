@@ -12,10 +12,10 @@ class NameDisplay extends Component {
     };
   }
 
-  updateName = (userFirstName, userSecondName) => {
+  updateName = (firstNameInput, secondNameInput) => {
     this.setState({
-      firstName: userFirstName,
-      secondName: userSecondName,
+      firstName: firstNameInput,
+      secondName: secondNameInput,
     });
   };
 
