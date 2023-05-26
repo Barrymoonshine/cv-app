@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import '../styles/ToggleContactForm.css';
+import '../styles/ContactForm.css';
 
-class ToggleContactForm extends Component {
+class ContactForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -58,4 +58,4 @@ class ToggleContactForm extends Component {
   }
 }
 
-export default ToggleContactForm;
+export default ContactForm;

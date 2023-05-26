@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
-import '../styles/ToggleEducationForm.css';
+import '../styles/WorkExperienceForm.css';
 
-class ToggleEducationForm extends Component {
+class ToggleWEForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      instituteInput: '',
-      subjectInput: '',
-      gradeInput: '',
+      roleInput: '',
+      organisationInput: '',
       dateFromInput: '',
       dateToInput: '',
+      responsibilitiesInput: '',
     };
   }
 
@@ -23,33 +23,33 @@ class ToggleEducationForm extends Component {
   handleSubmit = (event) => {
     event.preventDefault();
     const {
-      instituteInput,
-      subjectInput,
-      gradeInput,
+      roleInput,
+      organisationInput,
       dateFromInput,
       dateToInput,
+      responsibilitiesInput,
     } = event.target;
-    const { updateEducation, updateFormVisibilityCallBack, educationId } =
+    const { updateExperinces, updateFormVisibilityCallBack, experienceId } =
       this.props;
-    updateEducation(
-      educationId,
-      instituteInput.value,
-      subjectInput.value,
-      gradeInput.value,
+    updateExperinces(
+      experienceId,
+      roleInput.value,
+      organisationInput.value,
       dateFromInput.value,
-      dateToInput.value
+      dateToInput.value,
+      responsibilitiesInput.value
     )();
-    updateFormVisibilityCallBack(educationId, false)();
+    updateFormVisibilityCallBack(experienceId, false)();
   };
 
   render() {
     const { isFormVisible } = this.props;
     const {
-      instituteInput,
-      subjectInput,
-      gradeInput,
+      roleInput,
+      organisationInput,
       dateFromInput,
       dateToInput,
+      responsibilitiesInput,
     } = this.state;
 
     return (
@@ -57,27 +57,19 @@ class ToggleEducationForm extends Component {
         {isFormVisible && (
           <div>
             <form onSubmit={this.handleSubmit}>
-              <label>University/College/School:</label>
+              <label>Role:</label>
               <input
                 type='text'
-                name='instituteInput'
-                value={instituteInput}
+                name='roleInput'
+                value={roleInput}
                 onChange={this.handleInput}
                 required
               />
-              <label>Subject :</label>
+              <label>Organisation :</label>
               <input
                 type='text'
-                name='subjectInput'
-                value={subjectInput}
-                onChange={this.handleInput}
-                required
-              />
-              <label>Grade :</label>
-              <input
-                type='text'
-                name='gradeInput'
-                value={gradeInput}
+                name='organisationInput'
+                value={organisationInput}
                 onChange={this.handleInput}
                 required
               />
@@ -96,7 +88,16 @@ class ToggleEducationForm extends Component {
                 name='dateToInput'
                 value={dateToInput}
                 onChange={this.handleInput}
-                placeholder='YYYY'
+                placeholder='YYYY or Present'
+                required
+              />
+              <label>Responsibilities:</label>
+              <textarea
+                type='text'
+                name='responsibilitiesInput'
+                value={responsibilitiesInput}
+                onChange={this.handleInput}
+                placeholder='Provide a brief description of your responsibilities'
                 required
               />
               <button type='submit'>Submit</button>
@@ -108,4 +109,4 @@ class ToggleEducationForm extends Component {
   }
 }
 
-export default ToggleEducationForm;
+export default ToggleWEForm;

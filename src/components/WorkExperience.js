@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import '../styles/WorkExperienceDisplay.css';
-import ToggleWEForm from './ToggleWEForm';
+import '../styles/WorkExperience.css';
+import WorkExperienceForm from './WorkExperienceForm';
 import uniqid from 'uniqid';
 
-class WorkExperienceDisplay extends Component {
+class WorkExperience extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -114,7 +114,7 @@ class WorkExperienceDisplay extends Component {
                 </button>
               </div>
             ) : (
-              <ToggleWEForm
+              <WorkExperienceForm
                 key={uniqid()}
                 experienceId={experience.id}
                 isFormVisible={experience.isFormVisible}
@@ -130,4 +130,4 @@ class WorkExperienceDisplay extends Component {
   }
 }
 
-export default WorkExperienceDisplay;
+export default WorkExperience;

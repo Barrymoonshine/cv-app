@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import '../styles/ToggleSkillsForm.css';
+import '../styles/SkillsForm.css';
 
-class ToggleSkillsForm extends Component {
+class SkillsForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -50,4 +50,4 @@ class ToggleSkillsForm extends Component {
   }
 }
 
-export default ToggleSkillsForm;
+export default SkillsForm;

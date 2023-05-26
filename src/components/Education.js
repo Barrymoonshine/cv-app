@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import '../styles/EducationDisplay.css';
-import ToggleEducationForm from './ToggleEducationForm';
+import '../styles/Education.css';
+import EducationForm from './EducationForm';
 import uniqid from 'uniqid';
 
-class EducationDisplay extends Component {
+class Education extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -107,7 +107,7 @@ class EducationDisplay extends Component {
                 </button>
               </div>
             ) : (
-              <ToggleEducationForm
+              <EducationForm
                 key={uniqid()}
                 educationId={education.id}
                 isFormVisible={education.isFormVisible}
@@ -123,4 +123,4 @@ class EducationDisplay extends Component {
   }
 }
 
-export default EducationDisplay;
+export default Education;

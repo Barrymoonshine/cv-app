@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import TogglePSForm from './TogglePSForm';
-import '../styles/PersonalStatementDisplay.css';
+import AboutMeForm from './AboutMeForm';
+import '../styles/AboutMe.css';
 
-class PersonalStatementDisplay extends Component {
+class AboutMe extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -42,7 +42,7 @@ class PersonalStatementDisplay extends Component {
           )}
         </div>
         <div>
-          <TogglePSForm
+          <AboutMeForm
             isFormVisible={isFormVisible}
             updateFormVisibility={this.updateFormVisibility}
             updateStatement={this.updateStatement}
@@ -53,4 +53,4 @@ class PersonalStatementDisplay extends Component {
   }
 }
 
-export default PersonalStatementDisplay;
+export default AboutMe;

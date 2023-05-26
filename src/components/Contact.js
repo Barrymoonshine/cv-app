@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import ToggleContactForm from './ToggleContactForm';
-import '../styles/ContactDisplay.css';
+import ContactForm from './ContactForm';
+import '../styles/Contact.css';
 
-class ContactDisplay extends Component {
+class Contact extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -41,7 +41,7 @@ class ContactDisplay extends Component {
           )}
         </div>
         <div>
-          <ToggleContactForm
+          <ContactForm
             isFormVisible={isFormVisible}
             updateFormVisibility={this.updateFormVisibility}
             updateContacts={this.updateContacts}
@@ -52,4 +52,4 @@ class ContactDisplay extends Component {
   }
 }
 
-export default ContactDisplay;
+export default Contact;

@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import ToggleNameForm from './ToggleNameForm';
-import '../styles/NameDisplay.css';
+import NameForm from './NameForm';
+import '../styles/Name.css';
 
-class NameDisplay extends Component {
+class Name extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -42,7 +42,7 @@ class NameDisplay extends Component {
           )}
         </div>
         <div>
-          <ToggleNameForm
+          <NameForm
             isFormVisible={isFormVisible}
             updateFormVisibility={this.updateFormVisibility}
             updateName={this.updateName}
@@ -53,4 +53,4 @@ class NameDisplay extends Component {
   }
 }
 
-export default NameDisplay;
+export default Name;

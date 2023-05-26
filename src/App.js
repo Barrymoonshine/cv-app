@@ -1,12 +1,12 @@
 import './App.css';
 import React, { Component } from 'react';
-import NameDisplay from './components/NameDisplay';
-import AddressDisplay from './components/AddressDisplay';
-import ContactDisplay from './components/ContactDisplay';
-import PersonalStatementDisplay from './components/PersonalStatementDisplay';
-import WorkExperienceDisplay from './components/WorkExperienceDisplay';
-import EducationDisplay from './components/EducationDisplay';
-import SkillsDisplay from './components/SkillsDisplay';
+import Name from './components/Name';
+import Address from './components/Address';
+import Contact from './components/Contact';
+import AboutMe from './components/AboutMe';
+import WorkExperience from './components/WorkExperience';
+import Education from './components/Education';
+import Skills from './components/Skills';
 
 class App extends Component {
   render() {
@@ -14,17 +14,17 @@ class App extends Component {
       <div>
         <div className='title'>CV generator</div>
         <div className='cv-container'>
-          <NameDisplay />
-          <AddressDisplay />
-          <ContactDisplay />
-          <div>Profile</div>
-          <PersonalStatementDisplay />
+          <Name />
+          <Address />
+          <Contact />
+          <div>About me</div>
+          <AboutMe />
           <div>Work experience</div>
-          <WorkExperienceDisplay />
+          <WorkExperience />
           <div>Education</div>
-          <EducationDisplay />
+          <Education />
           <div>Skills</div>
-          <SkillsDisplay />
+          <Skills />
         </div>
       </div>
     );

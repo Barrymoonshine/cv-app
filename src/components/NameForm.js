@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import '../styles/ToggleNameForm.css';
+import '../styles/NameForm.css';
 
-class ToggleNameForm extends Component {
+class NameForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -57,4 +57,4 @@ class ToggleNameForm extends Component {
   }
 }
 
-export default ToggleNameForm;
+export default NameForm;

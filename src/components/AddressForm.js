@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import '../styles/ToggleAddressForm.css';
+import '../styles/AddressForm.css';
 
-class ToggleAddressForm extends Component {
+class AddressForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -103,4 +103,4 @@ class ToggleAddressForm extends Component {
   }
 }
 
-export default ToggleAddressForm;
+export default AddressForm;

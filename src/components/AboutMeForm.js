@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import '../styles/TogglePSForm.css';
+import '../styles/AboutMeForm.css';
 
-class TogglePSForm extends Component {
+class AboutMeForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -49,4 +49,4 @@ class TogglePSForm extends Component {
   }
 }
 
-export default TogglePSForm;
+export default AboutMeForm;

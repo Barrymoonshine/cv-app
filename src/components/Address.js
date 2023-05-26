@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import ToggleAddressForm from './ToggleAddressForm';
-import '../styles/AddressDisplay.css';
+import AddressForm from './AddressForm';
+import '../styles/Address.css';
 
-class AddressDisplay extends Component {
+class Address extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -58,7 +58,7 @@ class AddressDisplay extends Component {
           )}
         </div>
         <div>
-          <ToggleAddressForm
+          <AddressForm
             isFormVisible={isFormVisible}
             updateFormVisibility={this.updateFormVisibility}
             updateAddress={this.updateAddress}
@@ -69,4 +69,4 @@ class AddressDisplay extends Component {
   }
 }
 
-export default AddressDisplay;
+export default Address;

@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import '../styles/SkillsDisplay.css';
-import ToggleSkillsForm from './ToggleSkillsForm';
+import '../styles/Skills.css';
+import SkillsForm from './SkillsForm';
 import uniqid from 'uniqid';
 
-class SkillsDisplay extends Component {
+class Skills extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -85,7 +85,7 @@ class SkillsDisplay extends Component {
                 </button>
               </div>
             ) : (
-              <ToggleSkillsForm
+              <SkillsForm
                 key={uniqid()}
                 skillId={skill.id}
                 isFormVisible={skill.isFormVisible}
@@ -101,4 +101,4 @@ class SkillsDisplay extends Component {
   }
 }
 
-export default SkillsDisplay;
+export default Skills;
