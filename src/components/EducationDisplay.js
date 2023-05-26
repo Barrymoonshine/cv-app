@@ -58,15 +58,16 @@ class EducationDisplay extends Component {
   };
 
   updateFormVisibilityCallBack = (id, boolean) => () => {
+    console.log('updateFormVisibilityCallBack invoked');
+    console.log(`id: ${id}`);
+    console.log(`id: ${boolean}`);
     this.setState((prevState) => {
-      const updatedArray = prevState.educationalExperience.experiences.map(
-        (education) => {
-          if (education.id === id) {
-            return { ...education, isFormVisible: boolean };
-          }
-          return education;
+      const updatedArray = prevState.educationalExperience.map((education) => {
+        if (education.id === id) {
+          return { ...education, isFormVisible: boolean };
         }
-      );
+        return education;
+      });
       return { educationalExperience: updatedArray };
     });
   };
