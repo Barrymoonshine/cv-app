@@ -8,47 +8,42 @@ class ContactDisplay extends Component {
     this.state = {
       phoneNo: 2024561414,
       email: 'papajoe1@aol.com',
-      isContactFormVisible: false,
+      isFormVisible: false,
     };
   }
 
-  updateContacts = (userPhoneNo, userEmail) => {
+  updateContacts = (phoneNoInput, emailInput) => {
     this.setState({
-      phoneNo: userPhoneNo,
-      email: userEmail,
+      phoneNo: phoneNoInput,
+      email: emailInput,
     });
   };
 
   updateFormVisibility = () => {
     this.setState((prevState) => ({
-      isContactFormVisible: !prevState.isContactFormVisible,
+      isFormVisible: !prevState.isFormVisible,
     }));
   };
 
   render() {
-    const { phoneNo, email, isContactFormVisible } = this.state;
+    const { phoneNo, email, isFormVisible } = this.state;
 
-    let contactContainer = null;
-
-    if (isContactFormVisible) {
-      contactContainer = null;
-    } else {
-      contactContainer = (
-        <div className='contact-container'>
-          <div className='contact-details'>
-            <div>{phoneNo}</div>
-            <div>{email}</div>
-          </div>
-          <button onClick={this.updateFormVisibility}>Edit</button>
-        </div>
-      );
-    }
     return (
       <div>
-        <div>{contactContainer}</div>
+        <div>
+          {!isFormVisible && (
+            <div className='contact-container'>
+              <div className='contact-details'>
+                <div>{phoneNo}</div>
+                <div>{email}</div>
+              </div>
+              <button onClick={this.updateFormVisibility}>Edit</button>
+            </div>
+          )}
+        </div>
         <div>
           <ToggleContactForm
-            isContactFormVisible={isContactFormVisible}
+            isFormVisible={isFormVisible}
             updateFormVisibility={this.updateFormVisibility}
             updateContacts={this.updateContacts}
           />
