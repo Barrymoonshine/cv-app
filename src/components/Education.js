@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import '../styles/Education.css';
+import '../styles/buttons.css';
 import EducationForm from './EducationForm';
 import uniqid from 'uniqid';
 
@@ -122,6 +123,7 @@ class Education extends Component {
                 </div>
                 <button
                   key={uniqid()}
+                  className='edit-button'
                   onClick={() => this.updateFormVisibility(education.id, true)}
                 >
                   Edit

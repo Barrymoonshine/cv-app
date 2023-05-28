@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import NameForm from './NameForm';
 import '../styles/Name.css';
+import '../styles/buttons.css';
 
 class Name extends Component {
   constructor(props) {
@@ -37,7 +38,12 @@ class Name extends Component {
                 <div>{firstName}</div>
                 <div>{secondName}</div>
               </div>
-              <button onClick={this.updateFormVisibility}>Edit</button>
+              <button
+                className='edit-button'
+                onClick={this.updateFormVisibility}
+              >
+                Edit
+              </button>
             </div>
           )}
         </div>

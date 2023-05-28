@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import AddressForm from './AddressForm';
 import '../styles/Address.css';
+import '../styles/buttons.css';
 
 class Address extends Component {
   constructor(props) {
@@ -53,7 +54,12 @@ class Address extends Component {
                 <div>{zipCode}</div>
                 <div>{country}</div>
               </div>
-              <button onClick={this.updateFormVisibility}>Edit</button>
+              <button
+                className='edit-button'
+                onClick={this.updateFormVisibility}
+              >
+                Edit
+              </button>
             </div>
           )}
         </div>

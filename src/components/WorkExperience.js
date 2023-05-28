@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import '../styles/WorkExperience.css';
+import '../styles/buttons.css';
 import WorkExperienceForm from './WorkExperienceForm';
 import uniqid from 'uniqid';
 
@@ -134,6 +135,7 @@ class WorkExperience extends Component {
                 </div>
                 <button
                   key={uniqid()}
+                  className='edit-button'
                   onClick={() => this.updateFormVisibility(experience.id, true)}
                 >
                   Edit

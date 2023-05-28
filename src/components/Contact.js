@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ContactForm from './ContactForm';
 import '../styles/Contact.css';
+import '../styles/buttons.css';
 
 class Contact extends Component {
   constructor(props) {
@@ -36,7 +37,12 @@ class Contact extends Component {
                 <div>{phoneNo}</div>
                 <div>{email}</div>
               </div>
-              <button onClick={this.updateFormVisibility}>Edit</button>
+              <button
+                className='edit-button'
+                onClick={this.updateFormVisibility}
+              >
+                Edit
+              </button>
             </div>
           )}
         </div>

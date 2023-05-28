@@ -80,3 +80,12 @@ textarea {
   padding: 10px;
   border-bottom: solid 2px var(--sky);
 }
+
+.footer {
+  font-size: 20px;
+  padding: 50px 0 10px 0;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: auto;
+}

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import AboutMeForm from './AboutMeForm';
 import '../styles/AboutMe.css';
+import '../styles/buttons.css';
 
 class AboutMe extends Component {
   constructor(props) {
@@ -37,7 +38,12 @@ class AboutMe extends Component {
               <div className='about-me-details'>
                 <div>{aboutMe}</div>
               </div>
-              <button onClick={this.updateFormVisibility}>Edit</button>
+              <button
+                className='edit-button'
+                onClick={this.updateFormVisibility}
+              >
+                Edit
+              </button>
             </div>
           )}
         </div>
