@@ -32,25 +32,29 @@ class NameForm extends Component {
     return (
       <div>
         {isFormVisible && (
-          <form onSubmit={this.handleSubmit}>
-            <label>First name:</label>
-            <input
-              type='text'
-              name='firstNameInput'
-              value={firstNameInput}
-              onChange={this.handleNameInput}
-              required
-            />
-            <label>Second name:</label>
-            <input
-              type='text'
-              name='secondNameInput'
-              value={secondNameInput}
-              onChange={this.handleNameInput}
-              required
-            />
-            <button type='submit'>Submit</button>
-          </form>
+          <div className='name-container'>
+            <form onSubmit={this.handleSubmit}>
+              <label>First name:</label>
+              <input
+                type='text'
+                name='firstNameInput'
+                value={firstNameInput}
+                onChange={this.handleNameInput}
+                required
+              />
+              <label>Second name:</label>
+              <input
+                type='text'
+                name='secondNameInput'
+                value={secondNameInput}
+                onChange={this.handleNameInput}
+                required
+              />
+              <button type='submit' class='submit-button'>
+                Submit
+              </button>
+            </form>
+          </div>
         )}
       </div>
     );

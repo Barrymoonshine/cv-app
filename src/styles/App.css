@@ -29,7 +29,13 @@ input {
 }
 
 label {
-  text-align: center;
+  padding-bottom: 5px;
+}
+
+input {
+  border-radius: 5px;
+  padding-bottom: 5px;
+  margin-bottom: 5px;
 }
 
 .cv-container {
