@@ -152,7 +152,9 @@ class Education extends Component {
             )}
           </div>
         ))}
-        <button onClick={this.addEducation}>+ Education</button>
+        <button className='new-education-button' onClick={this.addEducation}>
+          + Education
+        </button>
       </div>
     );
   }

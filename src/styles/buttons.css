@@ -2,13 +2,13 @@
   padding: 5px 10px 5px 10px;
   border-radius: 5px;
   border: none;
-  background-color: #6ee7b7;
+  background-color: #fdba74;
   margin: 10px 10px 10px 0px;
 }
 
 .edit-button:hover {
   cursor: pointer;
-  background-color: #5dc99e;
+  background-color: #f97316;
 }
 
 .delete-button {
@@ -28,4 +28,21 @@
   cursor: pointer;
   border: solid 1px black;
   border-radius: 25px;
+}
+
+.new-experience-button,
+.new-education-button,
+.new-skill-button {
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: #6ee7b7;
+  margin: 10px 10px 10px 0px;
+}
+
+.new-experience-button:hover,
+.new-education-button:hover,
+.new-skill-button:hover {
+  cursor: pointer;
+  background-color: #5dc99e;
 }

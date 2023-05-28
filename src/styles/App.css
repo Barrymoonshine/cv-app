@@ -93,6 +93,7 @@ textarea {
 .work-experience-icon,
 .education-icon,
 .skills-icon {
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
+  vertical-align: bottom;
 }

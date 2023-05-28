@@ -101,7 +101,7 @@ class Skills extends Component {
                 <button
                   key={uniqid()}
                   className='delete-button'
-                  onClick={() => this.delete(skill.id)}
+                  onClick={() => this.deleteSkill(skill.id)}
                 >
                   <img
                     src={deleteIcon}
@@ -121,7 +121,9 @@ class Skills extends Component {
             )}
           </div>
         ))}
-        <button onClick={this.addSkill}>+ Skill</button>
+        <button className='new-skill-button' onClick={this.addSkill}>
+          + Skill
+        </button>
       </div>
     );
   }
