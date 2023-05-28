@@ -3,6 +3,7 @@ import '../styles/Education.css';
 import '../styles/buttons.css';
 import EducationForm from './EducationForm';
 import uniqid from 'uniqid';
+import deleteIcon from '../assets/delete.png';
 
 class Education extends Component {
   constructor(props) {
@@ -130,9 +131,14 @@ class Education extends Component {
                 </button>
                 <button
                   key={uniqid()}
+                  className='delete-button'
                   onClick={() => this.deleteEducation(education.id)}
                 >
-                  Delete
+                  <img
+                    src={deleteIcon}
+                    className='delete-image'
+                    alt='delete'
+                  ></img>
                 </button>
               </div>
             ) : (

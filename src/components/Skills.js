@@ -3,6 +3,7 @@ import '../styles/Skills.css';
 import '../styles/buttons.css';
 import SkillsForm from './SkillsForm';
 import uniqid from 'uniqid';
+import deleteIcon from '../assets/delete.png';
 
 class Skills extends Component {
   constructor(props) {
@@ -99,9 +100,14 @@ class Skills extends Component {
                 </button>
                 <button
                   key={uniqid()}
-                  onClick={() => this.deleteSkill(skill.id)}
+                  className='delete-button'
+                  onClick={() => this.delete(skill.id)}
                 >
-                  Delete
+                  <img
+                    src={deleteIcon}
+                    className='delete-image'
+                    alt='delete'
+                  ></img>
                 </button>
               </ul>
             ) : (

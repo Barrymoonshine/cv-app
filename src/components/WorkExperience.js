@@ -3,6 +3,7 @@ import '../styles/WorkExperience.css';
 import '../styles/buttons.css';
 import WorkExperienceForm from './WorkExperienceForm';
 import uniqid from 'uniqid';
+import deleteIcon from '../assets/delete.png';
 
 class WorkExperience extends Component {
   constructor(props) {
@@ -142,9 +143,14 @@ class WorkExperience extends Component {
                 </button>
                 <button
                   key={uniqid()}
+                  className='delete-button'
                   onClick={() => this.deleteExperience(experience.id)}
                 >
-                  Delete
+                  <img
+                    src={deleteIcon}
+                    className='delete-image'
+                    alt='delete'
+                  ></img>
                 </button>
               </div>
             ) : (

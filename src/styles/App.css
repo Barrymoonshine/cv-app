@@ -45,7 +45,7 @@ textarea {
 }
 
 .cv-container {
-  width: 1000px;
+  width: 1200px;
   height: 90%;
   display: grid;
   grid-template-columns: 1fr 2fr;
