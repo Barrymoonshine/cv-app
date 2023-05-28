@@ -7,6 +7,9 @@ import AboutMe from './components/AboutMe';
 import WorkExperience from './components/WorkExperience';
 import Education from './components/Education';
 import Skills from './components/Skills';
+import workExperienceIcon from './assets/work-experience.png';
+import educationIcon from './assets/education.png';
+import skillsIcon from './assets/skills.png';
 
 class App extends Component {
   render() {
@@ -24,11 +27,32 @@ class App extends Component {
               <AboutMe />
             </div>
             <div className='right-container'>
-              <div className='sub-titles'>Work experience</div>
+              <div className='sub-titles'>
+                <img
+                  src={workExperienceIcon}
+                  className='work-experience-icon'
+                  alt='Work experience'
+                ></img>
+                &nbsp; Work experience
+              </div>
               <WorkExperience />
-              <div className='sub-titles'>Education</div>
+              <div className='sub-titles'>
+                <img
+                  src={educationIcon}
+                  className='education-icon'
+                  alt='Education'
+                ></img>
+                &nbsp;Education
+              </div>
               <Education />
-              <div className='sub-titles'>Skills</div>
+              <div className='sub-titles'>
+                <img
+                  src={skillsIcon}
+                  className='skills-icon'
+                  alt='Skills'
+                ></img>
+                &nbsp;Skills
+              </div>
               <Skills />
             </div>
           </div>
