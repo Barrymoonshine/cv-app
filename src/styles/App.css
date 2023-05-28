@@ -12,6 +12,7 @@ body {
   align-items: center;
   background-color: var(--neutral);
   color: var(--zinc);
+  font-family: 'Source Sans Pro', sans-serif;
 }
 
 .title {
@@ -58,4 +59,11 @@ label {
   display: flex;
   flex-direction: column;
   gap: 20px;
+}
+
+.sub-titles {
+  font-size: 18px;
+  font-weight: bold;
+  padding-bottom: 10px;
+  border-bottom: solid 1px var(--zinc);
 }

@@ -16,9 +16,10 @@ class App extends Component {
         <div className='cv-container'>
           <div className='left-container'>
             <Name />
+            <div className='sub-titles'>Contact</div>
             <Address />
             <Contact />
-            <div>About me</div>
+            <div className='sub-titles'>About me</div>
             <AboutMe />
           </div>
           <div className='right-container'>
