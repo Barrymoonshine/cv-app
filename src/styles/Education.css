@@ -1,0 +1,20 @@
+.education-container {
+  padding: 10px;
+}
+
+.education-details {
+  padding-bottom: 10px;
+}
+
+.institute,
+.level-year {
+  display: flex;
+}
+
+.level-year {
+  padding-bottom: 10px;
+}
+
+.head {
+  font-weight: bold;
+}

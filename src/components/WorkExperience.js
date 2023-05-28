@@ -66,11 +66,11 @@ class WorkExperience extends Component {
   addExperience = () => {
     const newExperience = {
       id: uniqid(),
-      role: 'new',
-      organisation: 'new',
-      dateFrom: 'new',
-      dateTo: 'new',
-      responsibilities: `new`,
+      role: '',
+      organisation: '',
+      dateFrom: '',
+      dateTo: '',
+      responsibilities: ``,
     };
     this.setState({
       experiences: [...this.state.experiences, newExperience],

@@ -57,48 +57,52 @@ class EducationForm extends Component {
         {isFormVisible && (
           <div>
             <form onSubmit={this.handleSubmit}>
-              <label>University/College/School:</label>
-              <input
-                type='text'
-                name='instituteInput'
-                value={instituteInput}
-                onChange={this.handleInput}
-                required
-              />
-              <label>Subject :</label>
-              <input
-                type='text'
-                name='subjectInput'
-                value={subjectInput}
-                onChange={this.handleInput}
-                required
-              />
-              <label>Grade :</label>
-              <input
-                type='text'
-                name='gradeInput'
-                value={gradeInput}
-                onChange={this.handleInput}
-                required
-              />
-              <label>Date from:</label>
-              <input
-                type='text'
-                name='dateFromInput'
-                value={dateFromInput}
-                onChange={this.handleInput}
-                placeholder='YYYY'
-                required
-              />
-              <label>Date to:</label>
-              <input
-                type='text'
-                name='dateToInput'
-                value={dateToInput}
-                onChange={this.handleInput}
-                placeholder='YYYY'
-                required
-              />
+              <div className='top-inputs'>
+                <label>Institute:</label>
+                <input
+                  type='text'
+                  name='instituteInput'
+                  value={instituteInput}
+                  onChange={this.handleInput}
+                  required
+                />
+                <label>Subject :</label>
+                <input
+                  type='text'
+                  name='subjectInput'
+                  value={subjectInput}
+                  onChange={this.handleInput}
+                  required
+                />
+                <label>Grade :</label>
+                <input
+                  type='text'
+                  name='gradeInput'
+                  value={gradeInput}
+                  onChange={this.handleInput}
+                  required
+                />
+              </div>
+              <div className='bottom-inputs'>
+                <label>Date from:</label>
+                <input
+                  type='text'
+                  name='dateFromInput'
+                  value={dateFromInput}
+                  onChange={this.handleInput}
+                  placeholder='YYYY'
+                  required
+                />
+                <label>Date to:</label>
+                <input
+                  type='text'
+                  name='dateToInput'
+                  value={dateToInput}
+                  onChange={this.handleInput}
+                  placeholder='YYYY'
+                  required
+                />
+              </div>
               <button type='submit'>Submit</button>
             </form>
           </div>

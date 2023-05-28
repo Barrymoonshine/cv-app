@@ -10,12 +10,22 @@ class Education extends Component {
       educationalExperience: [
         {
           id: uniqid(),
-          institute: 'President of the United States',
-          subject: 'The White House, Washington, D.C.',
-          grade: '2021',
-          level: 'Present',
-          dateFrom: '2021',
-          dateTo: 'Present',
+          institute: 'Syracuse University College of Law',
+          subject: 'Juris Doctor (J.D.)',
+          grade: 'Pass',
+          level: 'Doctorate',
+          dateFrom: '1965',
+          dateTo: '1968',
+          isFormVisible: false,
+        },
+        {
+          id: uniqid(),
+          institute: 'University of Delaware',
+          subject: 'Bachelor of Arts in Political Science',
+          grade: 'Pass',
+          level: 'Degree',
+          dateFrom: '1962',
+          dateTo: '1965',
           isFormVisible: false,
         },
       ],
@@ -46,10 +56,10 @@ class Education extends Component {
   addEducation = () => {
     const newEducation = {
       id: uniqid(),
-      institute: 'New',
-      subject: 'New',
-      grade: 'New',
-      level: 'New',
+      institute: '',
+      subject: '',
+      grade: '',
+      level: '',
       isFormVisible: false,
     };
     this.setState({
@@ -102,12 +112,14 @@ class Education extends Component {
           <div key={uniqid()} className='education-details'>
             {!education.isFormVisible ? (
               <div key={uniqid()}>
-                <div key={uniqid()}>{education.institute}</div>
-                <div key={uniqid()}>{education.subject}</div>
-                <div key={uniqid()}>{education.grade}</div>
-                <div key={uniqid()}>{education.level}</div>
-                <div key={uniqid()}>{education.dateFrom}</div>
-                <div key={uniqid()}>{education.dateTo}</div>
+                <div key={uniqid()} className='institute'>
+                  <div className='head'>{education.institute} : </div>
+                  &nbsp; {education.subject}, {education.grade}
+                </div>
+                <div key={uniqid()} className='level-year'>
+                  <div className='head'> {education.level} : </div>
+                  &nbsp; {education.dateFrom} - {education.dateTo}
+                </div>
                 <button
                   key={uniqid()}
                   onClick={() => this.updateFormVisibility(education.id, true)}
