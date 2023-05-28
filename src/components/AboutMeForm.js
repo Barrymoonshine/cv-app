@@ -5,7 +5,7 @@ class AboutMeForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      statementInput: '',
+      aboutMeInput: '',
     };
   }
 
@@ -18,31 +18,33 @@ class AboutMeForm extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    const { statementInput } = event.target;
-    const { updateStatement, updateFormVisibility } = this.props;
-    updateStatement(statementInput.value);
+    const { aboutMeInput } = event.target;
+    const { updateAboutMe, updateFormVisibility } = this.props;
+    updateAboutMe(aboutMeInput.value);
     updateFormVisibility();
   };
 
   render() {
     const { isFormVisible } = this.props;
-    const { statementInput } = this.state;
+    const { aboutMeInput } = this.state;
 
     return (
       <div>
         {isFormVisible && (
-          <form onSubmit={this.handleSubmit}>
-            <label>PersonalStatement</label>
-            <textarea
-              type='personalStatment'
-              name='statementInput'
-              maxLength='600'
-              required
-              value={statementInput}
-              onChange={this.handleStatementInput}
-            />
-            <button type='submit'>Submit</button>
-          </form>
+          <div className='about-me-container'>
+            <form onSubmit={this.handleSubmit}>
+              <label>About me:</label>
+              <textarea
+                name='aboutMeInput'
+                maxLength='600'
+                placeholder='Briefly introduce yourself...'
+                required
+                value={aboutMeInput}
+                onChange={this.handleStatementInput}
+              />
+              <button type='submit'>Submit</button>
+            </form>
+          </div>
         )}
       </div>
     );

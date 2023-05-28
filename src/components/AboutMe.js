@@ -6,7 +6,7 @@ class AboutMe extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      statement: `Joe Biden is a seasoned statesman with a deep commitment to public service. 
+      aboutMe: `Joe Biden is a seasoned statesman with a deep commitment to public service. 
       Throughout his career, he has demonstrated a strong dedication to fighting for the rights and well-being of all Americans. 
       As President of the United States, he strives to unite the nation, tackle pressing challenges, and build a brighter future. 
       With his experience, compassion, and resilience, Joe Biden is focused on delivering meaningful change, promoting equity, and restoring America's standing in the world. 
@@ -15,9 +15,9 @@ class AboutMe extends Component {
     };
   }
 
-  updateStatement = (userStatement) => {
+  updateAboutMe = (aboutMeInput) => {
     this.setState({
-      statement: userStatement,
+      aboutMe: aboutMeInput,
     });
   };
 
@@ -28,14 +28,14 @@ class AboutMe extends Component {
   };
 
   render() {
-    const { statement, isFormVisible } = this.state;
+    const { aboutMe, isFormVisible } = this.state;
     return (
       <div>
         <div>
           {!isFormVisible && (
-            <div className='statement-container'>
-              <div className='statement-details'>
-                <div>{statement}</div>
+            <div className='about-me-container'>
+              <div className='about-me-details'>
+                <div>{aboutMe}</div>
               </div>
               <button onClick={this.updateFormVisibility}>Edit</button>
             </div>
@@ -45,7 +45,7 @@ class AboutMe extends Component {
           <AboutMeForm
             isFormVisible={isFormVisible}
             updateFormVisibility={this.updateFormVisibility}
-            updateStatement={this.updateStatement}
+            updateAboutMe={this.updateAboutMe}
           />
         </div>
       </div>

@@ -1,0 +1,31 @@
+.work-experience-container {
+  padding: 10px;
+}
+
+.experience-first-line {
+  display: flex;
+  justify-content: space-between;
+  font-size: 15px;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+.role {
+  color: #034b6e;
+}
+
+.experience-second-line {
+  display: flex;
+  justify-content: flex-end;
+  color: #034b6e;
+  margin-bottom: 5px;
+}
+
+.responsibilities-details {
+  margin-bottom: 5px;
+}
+
+.new-experience-button {
+  margin-top: 10px;
+}

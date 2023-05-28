@@ -57,40 +57,46 @@ class ToggleWEForm extends Component {
         {isFormVisible && (
           <div>
             <form onSubmit={this.handleSubmit}>
-              <label>Role:</label>
-              <input
-                type='text'
-                name='roleInput'
-                value={roleInput}
-                onChange={this.handleInput}
-                required
-              />
-              <label>Organisation :</label>
-              <input
-                type='text'
-                name='organisationInput'
-                value={organisationInput}
-                onChange={this.handleInput}
-                required
-              />
-              <label>Date from:</label>
-              <input
-                type='text'
-                name='dateFromInput'
-                value={dateFromInput}
-                onChange={this.handleInput}
-                placeholder='YYYY'
-                required
-              />
-              <label>Date to:</label>
-              <input
-                type='text'
-                name='dateToInput'
-                value={dateToInput}
-                onChange={this.handleInput}
-                placeholder='YYYY or Present'
-                required
-              />
+              <div className='top-inputs'>
+                <label>Role:</label>
+                <input
+                  type='text'
+                  name='roleInput'
+                  value={roleInput}
+                  onChange={this.handleInput}
+                  required
+                />
+                <label>Organisation :</label>
+                <input
+                  type='text'
+                  name='organisationInput'
+                  value={organisationInput}
+                  onChange={this.handleInput}
+                  required
+                />
+              </div>
+              <div className='bottom-inputs'>
+                <label>Date from:</label>
+                <input
+                  type='number'
+                  max='9999'
+                  name='dateFromInput'
+                  value={dateFromInput}
+                  onChange={this.handleInput}
+                  placeholder='YYYY'
+                  required
+                />
+                <label>Date to:</label>
+                <input
+                  type='text'
+                  max='7'
+                  name='dateToInput'
+                  value={dateToInput}
+                  onChange={this.handleInput}
+                  placeholder='YYYY or Present'
+                  required
+                />
+              </div>
               <label>Responsibilities:</label>
               <textarea
                 type='text'

@@ -19,6 +19,17 @@ class WorkExperience extends Component {
             Promotes unity, social justice, and racial equity, actively addressing systemic inequalities and advocating for reforms in criminal justice, voting rights, and immigration policies.`,
           isFormVisible: false,
         },
+        {
+          id: uniqid(),
+          role: 'Vice-President of the United States',
+          organisation: 'The White House, Washington, D.C.',
+          dateFrom: '2009',
+          dateTo: '2017',
+          responsibilities: `Dedicated and experienced public servant with a proven track record of leadership and achievement. 
+          Eight years of exceptional service as the Vice-President of the United States under President Barack Obama, where I played a pivotal role in shaping and implementing key policies that fostered economic growth, strengthened national security, and promoted social justice. 
+          Adept at navigating complex political landscapes and forging bipartisan collaborations to drive meaningful change. Committed to upholding the values of integrity, empathy, and inclusivity.`,
+          isFormVisible: false,
+        },
       ],
     };
   }
@@ -103,16 +114,24 @@ class WorkExperience extends Component {
     const { experiences } = this.state;
 
     return (
-      <div className='experience-container'>
+      <div className='work-experience-container'>
         {experiences.map((experience) => (
-          <div key={uniqid()} className='experience-details'>
+          <div key={uniqid()} className='work-experience-details'>
             {!experience.isFormVisible ? (
               <div key={uniqid()}>
-                <div key={uniqid()}>{experience.role}</div>
-                <div key={uniqid()}>{experience.organisation}</div>
-                <div key={uniqid()}>{experience.dateFrom}</div>
-                <div key={uniqid()}>{experience.dateTo}</div>
-                <div key={uniqid()}>{experience.responsibilities}</div>
+                <div key={uniqid()} className='experience-first-line'>
+                  <div key={uniqid()} className='role'>
+                    {experience.role}
+                  </div>
+                  <div key={uniqid()}>{experience.organisation}</div>
+                </div>
+                <div key={uniqid()} className='experience-second-line'>
+                  <div key={uniqid()}>{experience.dateFrom}</div> &nbsp;-&nbsp;
+                  <div key={uniqid()}>{experience.dateTo}</div>
+                </div>
+                <div key={uniqid()} className='responsibilities-details'>
+                  <div key={uniqid()}>{experience.responsibilities}</div>
+                </div>
                 <button
                   key={uniqid()}
                   onClick={() => this.updateFormVisibility(experience.id, true)}
@@ -137,7 +156,9 @@ class WorkExperience extends Component {
             )}
           </div>
         ))}
-        <button onClick={this.addExperience}>+ Work experience</button>
+        <button onClick={this.addExperience} className='new-experience-button'>
+          + Work experience
+        </button>
       </div>
     );
   }

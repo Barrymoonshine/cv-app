@@ -18,8 +18,8 @@ body {
 
 .title {
   text-align: center;
-  padding: 20px;
-  font-size: 40px;
+  padding: 10px;
+  font-size: 30px;
   font-weight: bold;
 }
 
@@ -39,16 +39,22 @@ input {
   margin-bottom: 5px;
 }
 
+textarea {
+  width: 95%;
+  height: 150px;
+}
+
 .cv-container {
-  width: 95vw;
-  height: 88vh;
+  width: 1000px;
+  height: 90%;
   display: grid;
   grid-template-columns: 1fr 2fr;
   align-items: center;
   justify-content: center;
   border: solid 2px var(--zinc);
   border-radius: 5px;
-  margin: 0px;
+  margin: 10px;
+  box-shadow: 10px 10px 10px rgb(0 0 0 / 0.2);
 }
 
 .left-container {

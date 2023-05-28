@@ -23,11 +23,11 @@ class App extends Component {
             <AboutMe />
           </div>
           <div className='right-container'>
-            <div>Work experience</div>
+            <div className='sub-titles'>Work experience</div>
             <WorkExperience />
-            <div>Education</div>
+            <div className='sub-titles'>Education</div>
             <Education />
-            <div>Skills</div>
+            <div className='sub-titles'>Skills</div>
             <Skills />
           </div>
         </div>
