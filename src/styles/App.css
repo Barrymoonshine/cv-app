@@ -2,6 +2,7 @@
   --neutral: #fafafa;
   --zinc: #18181b;
   --light-grey: #e7e5e4;
+  --sky: #034b6e;
 }
 
 body {
@@ -30,11 +31,11 @@ input {
 
 label {
   padding-bottom: 5px;
+  font-size: 15px;
 }
 
 input {
   border-radius: 5px;
-  padding-bottom: 5px;
   margin-bottom: 5px;
 }
 
@@ -45,8 +46,8 @@ input {
   grid-template-columns: 1fr 2fr;
   align-items: center;
   justify-content: center;
-  border: solid 1px var(--zinc);
-  border-radius: 5px 0px 0px 5px;
+  border: solid 2px var(--zinc);
+  border-radius: 5px;
   margin: 0px;
 }
 
@@ -70,6 +71,6 @@ input {
 .sub-titles {
   font-size: 18px;
   font-weight: bold;
-  padding-bottom: 10px;
-  border-bottom: solid 1px var(--zinc);
+  padding: 10px;
+  border-bottom: solid 2px var(--sky);
 }

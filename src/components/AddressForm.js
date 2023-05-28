@@ -53,50 +53,52 @@ class AddressForm extends Component {
     return (
       <div>
         {isFormVisible && (
-          <form onSubmit={this.handleSubmit}>
-            <label>Address line 1:</label>
-            <input
-              type='text'
-              name='firstLineInput'
-              value={firstLineInput}
-              onChange={this.handleAddressInput}
-              minLength='1'
-              required
-            />
-            <label>Address line 2:</label>
-            <input
-              type='text'
-              name='secondLineInput'
-              value={secondLineInput}
-              onChange={this.handleAddressInput}
-              required
-            />
-            <label>City:</label>
-            <input
-              type='text'
-              name='cityInput'
-              value={cityInput}
-              onChange={this.handleAddressInput}
-              required
-            />
-            <label>ZIP/ Post code</label>
-            <input
-              type='text'
-              name='zipCodeInput'
-              value={zipCodeInput}
-              onChange={this.handleAddressInput}
-              required
-            />
-            <label>Country</label>
-            <input
-              type='text'
-              name='countryInput'
-              value={countryInput}
-              onChange={this.handleAddressInput}
-              required
-            />
-            <button type='submit'>Submit</button>
-          </form>
+          <div className='address-container'>
+            <form onSubmit={this.handleSubmit}>
+              <label>Address line 1:</label>
+              <input
+                type='text'
+                name='firstLineInput'
+                value={firstLineInput}
+                onChange={this.handleAddressInput}
+                minLength='1'
+                required
+              />
+              <label>Address line 2:</label>
+              <input
+                type='text'
+                name='secondLineInput'
+                value={secondLineInput}
+                onChange={this.handleAddressInput}
+                required
+              />
+              <label>City:</label>
+              <input
+                type='text'
+                name='cityInput'
+                value={cityInput}
+                onChange={this.handleAddressInput}
+                required
+              />
+              <label>ZIP/ Post code</label>
+              <input
+                type='text'
+                name='zipCodeInput'
+                value={zipCodeInput}
+                onChange={this.handleAddressInput}
+                required
+              />
+              <label>Country</label>
+              <input
+                type='text'
+                name='countryInput'
+                value={countryInput}
+                onChange={this.handleAddressInput}
+                required
+              />
+              <button type='submit'>Submit</button>
+            </form>
+          </div>
         )}
       </div>
     );

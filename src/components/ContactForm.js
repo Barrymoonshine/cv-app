@@ -32,26 +32,28 @@ class ContactForm extends Component {
     return (
       <div>
         {isFormVisible && (
-          <form onSubmit={this.handleSubmit}>
-            <label>Email</label>
-            <input
-              type='email'
-              name='emailInput'
-              minLength='4'
-              required
-              value={emailInput}
-              onChange={this.handleContactsInput}
-            />
-            <label>Phone Number</label>
-            <input
-              type='tel'
-              name='phoneNoInput'
-              value={phoneNoInput}
-              onChange={this.handleContactsInput}
-              required
-            />
-            <button type='submit'>Submit</button>
-          </form>
+          <div className='contact-container'>
+            <form onSubmit={this.handleSubmit}>
+              <label>Email</label>
+              <input
+                type='email'
+                name='emailInput'
+                minLength='4'
+                required
+                value={emailInput}
+                onChange={this.handleContactsInput}
+              />
+              <label>Phone Number</label>
+              <input
+                type='tel'
+                name='phoneNoInput'
+                value={phoneNoInput}
+                onChange={this.handleContactsInput}
+                required
+              />
+              <button type='submit'>Submit</button>
+            </form>
+          </div>
         )}
       </div>
     );
