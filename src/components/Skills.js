@@ -10,7 +10,12 @@ class Skills extends Component {
       skills: [
         {
           id: uniqid(),
-          skill: 'President of the United States',
+          skill: 'Strong leadership and decision-making abilities',
+          isFormVisible: false,
+        },
+        {
+          id: uniqid(),
+          skill: 'Exceptional public speaking and communication skills',
           isFormVisible: false,
         },
       ],
@@ -82,8 +87,8 @@ class Skills extends Component {
         {skills.map((skill) => (
           <div key={uniqid()} className='skill-details'>
             {!skill.isFormVisible ? (
-              <div key={uniqid()}>
-                <div key={uniqid()}>{skill.skill}</div>
+              <ul>
+                <li key={uniqid()}>{skill.skill}</li>
                 <button
                   key={uniqid()}
                   onClick={() => this.updateFormVisibility(skill.id, true)}
@@ -96,7 +101,7 @@ class Skills extends Component {
                 >
                   Delete
                 </button>
-              </div>
+              </ul>
             ) : (
               <SkillsForm
                 key={uniqid()}
