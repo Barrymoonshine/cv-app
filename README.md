@@ -20,3 +20,4 @@ The CV-generator allows users to create and edit their own CV using the provided
 
 - Display buttons on mouse over of parent element
 - Download option
+- Re-factor to use lifecycle methods
