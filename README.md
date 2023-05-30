@@ -1,6 +1,6 @@
 # CV generator
 
-[Live demo](TBC)
+[Live demo](https://barrymoonshine.github.io/cv-app/)
 
 ## Summary
 
