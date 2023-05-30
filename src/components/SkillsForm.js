@@ -41,7 +41,9 @@ class SkillsForm extends Component {
                 onChange={this.handleInput}
                 required
               />
-              <button type='submit'>Submit</button>
+              <button className='submit-button' type='submit'>
+                Submit
+              </button>
             </form>
           </div>
         )}

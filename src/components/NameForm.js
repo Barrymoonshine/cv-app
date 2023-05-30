@@ -50,7 +50,11 @@ class NameForm extends Component {
                 onChange={this.handleNameInput}
                 required
               />
-              <button type='submit' class='submit-button'>
+              <button
+                className='submit-button'
+                type='submit'
+                class='submit-button'
+              >
                 Submit
               </button>
             </form>

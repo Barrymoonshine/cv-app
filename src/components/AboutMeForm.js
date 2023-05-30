@@ -42,7 +42,9 @@ class AboutMeForm extends Component {
                 value={aboutMeInput}
                 onChange={this.handleStatementInput}
               />
-              <button type='submit'>Submit</button>
+              <button className='submit-button' type='submit'>
+                Submit
+              </button>
             </form>
           </div>
         )}

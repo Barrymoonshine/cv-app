@@ -32,7 +32,8 @@
 
 .new-experience-button,
 .new-education-button,
-.new-skill-button {
+.new-skill-button,
+.submit-button {
   padding: 10px;
   border-radius: 5px;
   border: none;
@@ -42,7 +43,8 @@
 
 .new-experience-button:hover,
 .new-education-button:hover,
-.new-skill-button:hover {
+.new-skill-button:hover,
+.submit-button:hover {
   cursor: pointer;
   background-color: #5dc99e;
 }

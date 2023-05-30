@@ -96,7 +96,9 @@ class AddressForm extends Component {
                 onChange={this.handleAddressInput}
                 required
               />
-              <button type='submit'>Submit</button>
+              <button className='submit-button' type='submit'>
+                Submit
+              </button>
             </form>
           </div>
         )}
